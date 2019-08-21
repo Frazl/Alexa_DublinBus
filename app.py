@@ -29,10 +29,11 @@ def start_skill():
     welcome_message = 'What stop would you like information about?'
     return question(welcome_message)
 
-@ask.intent("StopNumber", mapping={'stopNo': 'Stop'})
-def share_stop_number_informatoin(stopNo):
-    print(stopNo)
-    information = get_stop_information(1191)
+@ask.intent("StopNumber", mapping={'Stop': 'Stop'})
+def share_stop_number_informatoin(Stop):
+    Stop = int(Stop)
+    print("see above")
+    information = get_stop_information(Stop)
     return statement(information)
 
 @ask.intent("NegativeIntent")
