@@ -32,9 +32,12 @@ def start_skill():
 @ask.intent("StopNumber", mapping={'Stop': 'Stop'})
 def share_stop_number_informatoin(Stop):
     Stop = int(Stop)
-    print("see above")
-    information = get_stop_information(Stop)
-    return statement(information)
+    if 9 < Stop < 7712:
+        print("see above")
+        information = get_stop_information(Stop)
+        return statement(information)
+    else:
+        return statement("{:n} is not a stop...".format(Stop))
 
 @ask.intent("NegativeIntent")
 def negative_intent():
