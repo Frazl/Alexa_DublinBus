@@ -44,7 +44,9 @@ def negative_intent():
     bye_text = "Rude for asking to me wake up then... I was having a nice nap... bye"
     return statement(bye_text)
 
-
+@ask.intent("AMAZON.HelpIntent")
+def help():
+    return question("Say something like dublin bus stop information for stop one one nine one..")
 
 
 
